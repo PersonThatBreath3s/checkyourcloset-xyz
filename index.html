@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your Closet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --linen: #EDE6DA;
+    --linen-light: #F6F1E8;
+    --charcoal: #2B2620;
+    --sage: #5C6B4F;
+    --sage-dark: #46523C;
+    --brass: #B08D57;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--linen);
+    color: var(--charcoal);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header / nav */
+  header {
+    padding: 32px 0 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(43,38,32,0.12);
+  }
+
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+
+  nav a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+  }
+
+  nav a:hover, nav a:focus-visible { opacity: 1; }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 56px;
+  }
+
+  .hero .signature {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    max-width: 11ch;
+  }
+
+  .hero p {
+    margin-top: 20px;
+    max-width: 42ch;
+    font-size: 1.05rem;
+    color: rgba(43,38,32,0.78);
+  }
+
+  /* Content section */
+  .content {
+    padding: 8px 0 56px;
+    border-top: 1px solid rgba(43,38,32,0.12);
+    padding-top: 48px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sage-dark);
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .content p {
+    max-width: 56ch;
+    margin-bottom: 16px;
+    color: rgba(43,38,32,0.85);
+  }
+
+  .content p:last-child { margin-bottom: 0; }
+
+  /* Contact section */
+  .contact {
+    padding: 48px 0 64px;
+    border-top: 1px solid rgba(43,38,32,0.12);
+  }
+
+  .contact-card {
+    background: var(--linen-light);
+    border: 1px solid rgba(43,38,32,0.1);
+    border-radius: 6px;
+    padding: 32px;
+  }
+
+  .contact-card p {
+    color: rgba(43,38,32,0.78);
+    margin-bottom: 20px;
+    max-width: 48ch;
+  }
+
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--sage);
+    color: var(--linen-light);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    padding: 13px 20px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .email-link:hover, .email-link:focus-visible {
+    background: var(--sage-dark);
+  }
+
+  .email-link svg { flex-shrink: 0; }
+
+  /* Footer */
+  footer {
+    padding: 28px 0 40px;
+    border-top: 1px solid rgba(43,38,32,0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    color: rgba(43,38,32,0.6);
+  }
+
+  footer .links {
+    display: flex;
+    gap: 20px;
+  }
+
+  footer a {
+    font-size: 0.85rem;
+    color: rgba(43,38,32,0.6);
+    text-decoration: none;
+  }
+
+  footer a:hover, footer a:focus-visible {
+    color: var(--charcoal);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <nav>
+      <span class="brand">checkyourcloset.xyz</span>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <svg class="signature" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M23 4 L23 14" stroke="#B08D57" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="23" cy="4" r="3" fill="#5C6B4F"/>
+      <path d="M6 42 L23 14 L40 42 Z" stroke="#2B2620" stroke-width="1.6" stroke-linejoin="round" fill="none" opacity="0.55"/>
+    </svg>
+    <h1>Welcome to the closet.</h1>
+    <p>This domain runs a private email service. Before you ask for an address, read why you probably won't get one.</p>
+  </section>
+
+  <section class="content">
+    <p class="eyebrow">About the service</p>
+    <h2>You're probably not getting one.</h2>
+    <p>checkyourcloset.xyz issues a small number of private email addresses under this domain — but only for genuinely extraordinary reasons. Wanting a nicer inbox isn't one. Neither is "it would look professional."</p>
+    <p>This isn't scarcity for its own sake. The address only stays worth having because almost no one has it. That's the whole mechanism.</p>
+    <p>If your reason actually clears that bar, you're welcome to make your case.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-card">
+      <p class="eyebrow" style="margin-bottom:14px;">Make your case</p>
+      <p>State your extraordinary reason. Every request gets read — approvals are rare.</p>
+      <a class="email-link" href="mailto:info@checkyourcloset.xyz">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+        info@checkyourcloset.xyz
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 checkyourcloset.xyz</p>
+    <div class="links">
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
